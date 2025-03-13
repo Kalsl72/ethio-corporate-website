@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header with Navigation -->
     <header>
         <div class="container">
             <img src="images/ethio-corporate-logo.jpg" alt="Ethio Corporate Logo" class="logo">
@@ -19,16 +18,12 @@
             </nav>
         </div>
     </header>
-
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Sign Up</h1>
             <p>Join Ethio Corporate to access exclusive legal resources and post blogs.</p>
         </div>
     </section>
-
-    <!-- Main Content -->
     <main class="container">
         <section class="signup-form">
             <form id="signup-form">
@@ -40,16 +35,12 @@
             </form>
         </section>
     </main>
-
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2025 Ethio Corporate. All rights reserved.</p>
             <p>Contact: info@ethiocorporate.com</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
     <script>
@@ -57,9 +48,16 @@
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
-            await signUp(email, password);
-            alert('Signup successful! Check your email for confirmation.');
-            window.location.href = 'index.html';
+            console.log('Submitting signup:', { email, password });
+            const { data, error } = await supabase.auth.signUp({ email, password });
+            if (error) {
+                console.error('Signup error:', error.message, error.status);
+                alert('Signup failed: ' + error.message);
+            } else {
+                console.log('Signup successful:', data.user);
+                alert('Signup successful! Check your email for confirmation.');
+                window.location.href = 'index.html';
+            }
         });
     </script>
 </body>
