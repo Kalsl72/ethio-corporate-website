@@ -30,3 +30,26 @@ async function getBlogPosts() {
     }
     return data;
 }
+
+async function logout() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        console.error('Error logging out:', error.message);
+        alert('Logout failed: ' + error.message);
+    } else {
+        alert('Logged out successfully!');
+        window.location.href = 'index.html';
+    }
+}
+
+// Check user session and show/hide logout button
+document.addEventListener('DOMContentLoaded', async () => {
+    const { data: { user } } = await supabase.auth.getUser();
+    const logoutBtn = document.getElementById('logout-btn');
+    if (user) {
+        logoutBtn.style.display = 'inline';
+    } else {
+        logoutBtn.style.display = 'none';
+    }
+    logoutBtn.addEventListener('click', logout);
+});
