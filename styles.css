@@ -4,22 +4,31 @@ body {
     padding: 0;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #f0f0f0;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
-header img {
+header {
+    background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
     max-width: 150px;
 }
 
-nav {
-    margin-top: 10px;
-}
-
 nav a {
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
@@ -30,7 +39,7 @@ nav a:hover {
 }
 
 nav button {
-    margin: 0 10px;
+    margin: 0 15px;
     padding: 5px 10px;
     background-color: #dc3545;
     color: white;
@@ -42,49 +51,46 @@ nav button:hover {
     background-color: #c82333;
 }
 
+.hero {
+    background-color: #007bff;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+}
+
 main {
-    padding: 20px;
+    padding: 20px 0;
+}
+
+.legal-advice, .search-docs {
+    margin: 20px 0;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #f0f0f0;
+    padding: 20px 0;
+    text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 300px;
-    margin: auto;
-}
-
-input, textarea, button {
-    margin: 10px 0;
+input[type="text"] {
+    width: 100%;
+    max-width: 400px;
     padding: 10px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #0056b3;
+    margin-top: 10px;
 }
 
 @media (max-width: 600px) {
-    header, main, footer {
-        padding: 10px;
+    header .container {
+        flex-direction: column;
     }
-    header img {
+    .logo {
         max-width: 100px;
     }
     nav a, nav button {
         display: block;
-        margin: 5px 0;
+        margin: 10px 0;
+    }
+    .hero, main, footer {
+        padding: 15px 0;
     }
 }
