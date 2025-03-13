@@ -3,29 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ethio Corporate</title>
+    <title>Ethio Corporate - Legal Advice</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header with Navigation -->
     <header>
-        <img src="images/ethio-corporate-logo.jpg" alt="Ethio Corporate Logo">
-        <h1>Welcome to Ethio Corporate</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="signup.html">Sign Up</a>
-            <a href="blog.html">Blog</a>
-            <button id="logout-btn" style="display: none;">Logout</button>
-        </nav>
+        <div class="container">
+            <img src="images/ethio-corporate-logo.jpg" alt="Ethio Corporate Logo" class="logo">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="signup.html">Sign Up</a>
+                <a href="blog.html">Blog</a>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </nav>
+        </div>
     </header>
-    <main>
-        <p>Use the bot below to get legal advice or search Ethiopian corporate law documentation.</p>
-        <!-- BotPress Integration -->
-        <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-        <script src="https://files.bpcontent.cloud/2025/03/02/17/20250302174517-92A1406M.js"></script>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Ethio Corporate</h1>
+            <p>Get expert legal advice and search Ethiopian corporate law documentation.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Legal Advice via Bot -->
+        <section class="legal-advice">
+            <h2>Ask Our Legal Bot</h2>
+            <p>Use the bot below for legal advice or to search corporate law documents.</p>
+            <!-- BotPress Integration -->
+            <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+            <script src="https://files.bpcontent.cloud/2025/03/02/17/20250302174517-92A1406M.js"></script>
+        </section>
+
+        <!-- Placeholder for Search Functionality -->
+        <section class="search-docs">
+            <h2>Search Ethiopian Corporate Law</h2>
+            <p>Coming soon: Search our database of corporate law documents.</p>
+            <input type="text" placeholder="Search documents..." disabled>
+        </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2023 Ethio Corporate</p>
+        <div class="container">
+            <p>© 2025 Ethio Corporate. All rights reserved.</p>
+            <p>Contact: info@ethiocorporate.com</p>
+        </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>
