@@ -1,4 +1,4 @@
-const { createClient } = supabase;
+import { createClient } from '@supabase/supabase-js'
 const supabase = createClient('https://nejcvvkikjpqrsifgxpg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5lamN2dmtpa2pwcXJzaWZneHBnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4MTAxMDgsImV4cCI6MjA1NzM4NjEwOH0.aOsHGgeb1tccBN9Ny91SVrNPFWQnvoZw87Fm1dhinmo');
 
 async function signUp(email, password) {
