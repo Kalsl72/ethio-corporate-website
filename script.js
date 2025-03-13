@@ -1,13 +1,16 @@
-import { createClient } from '@supabase/supabase-js'
+console.log('Script.js loaded');
+const { createClient } = supabase;
 const supabase = createClient('https://nejcvvkikjpqrsifgxpg.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5lamN2dmtpa2pwcXJzaWZneHBnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE4MTAxMDgsImV4cCI6MjA1NzM4NjEwOH0.aOsHGgeb1tccBN9Ny91SVrNPFWQnvoZw87Fm1dhinmo');
 
 async function signUp(email, password) {
+    console.log('signUp called with:', email, password);
     const { data, error } = await supabase.auth.signUp({ email, password });
     if (error) {
-        console.error('Error signing up:', error.message);
-        alert('Signup failed: ' + error.message);
+        console.error('Signup error:', error.message, error.status);
+        throw new Error(error.message);
     } else {
-        console.log('User signed up:', data.user);
+        console.log('Signup success:', data.user);
+        return data;
     }
 }
 
@@ -42,7 +45,6 @@ async function logout() {
     }
 }
 
-// Check user session and show/hide logout button
 document.addEventListener('DOMContentLoaded', async () => {
     const { data: { user } } = await supabase.auth.getUser();
     const logoutBtn = document.getElementById('logout-btn');
