@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Ethio Corporate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/ethio-corporate-logo.jpg" alt="Ethio Corporate Logo">
+        <h1>Blog</h1>
+    </header>
+    <main>
+        <div id="blog-posts"></div>
+        <form id="blog-form" style="display: none;">
+            <label for="title">Title:</label>
+            <input type="text" id="title" required>
+            <label for="content">Content:</label>
+            <textarea id="content" required></textarea>
+            <button type="submit">Post Blog</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2023 Ethio Corporate</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
+    <script>
+        async function loadBlogPosts() {
+            const posts = await getBlogPosts();
+            const blogPostsDiv = document.getElementById('blog-posts');
+            blogPostsDiv.innerHTML = '';
+            posts.forEach(post => {
+                const postDiv = document.createElement('div');
+                postDiv.innerHTML = `<h2>${post.title}</h2><p>${post.content}</p>`;
+                blogPostsDiv.appendChild(postDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadBlogPosts();
+            const { data: { user } } = await supabase.auth.getUser();
+            if (user) {
+                document.getElementById('blog-form').style.display = 'block';
+            } else {
+                alert('Please sign up or log in to post blogs.');
+            }
+        });
+
+        document.getElementById('blog-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const { data: { user } } = await supabase.auth.getUser();
+            await createBlogPost(title, content, user.id);
+            await loadBlogPosts();
+            document.getElementById('title').value = '';
+            document.getElementById('content').value = '';
+        });
+    </script>
+</body>
+</html>
