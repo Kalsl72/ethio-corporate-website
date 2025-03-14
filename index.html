@@ -8,21 +8,177 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ... (rest of your existing body content remains exactly the same) ... -->
-  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ethio Corporate</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Homepage -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">Ethio Corporate - Your Guide to Ethiopian Corporate Law</h1>
+        <p class="hero-subtitle">Ethio Corporate offers comprehensive insights, updates, and resources on Ethiopian corporate law, helping businesses, investors, and legal professionals navigate the legal landscape in Ethiopia.</p>
+        <a href="#" class="btn btn-primary btn-lg">Explore Corporate Law Resources</a>
+        <img src="addis-ababa-skyline.jpg" alt="Addis Ababa Skyline" class="hero-image">
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section class="about-section">
+      <div class="container">
+        <h2>About Ethio Corporate</h2>
+        <p>Ethio Corporate is a trusted resource hub founded to simplify and clarify Ethiopian corporate law for local and international businesses. With expertise in areas like company formation, mergers and acquisitions, corporate governance, and compliance, we aim to empower our users with up-to-date legal knowledge. Our mission is to bridge the gap between complex legal frameworks and practical business needs in Ethiopia.</p>
+      </div>
+    </section>
+
+    <!-- Services/Resources -->
+    <section class="resources-section">
+      <div class="container">
+        <h2>Corporate Law Resources</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="resource-card">
+              <h3>Company Formation</h3>
+              <p>Learn about establishing sole proprietorships, partnerships, PLCs, and share companies under the Ethiopian Commercial Code of 2021.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="resource-card">
+              <h3>Mergers & Acquisitions</h3>
+              <p>Understand the legal processes for business mergers, acquisitions, and restructuring in Ethiopia.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="resource-card">
+              <h3>Corporate Governance</h3>
+              <p>Explore governance rules, board structures, and shareholder rights as per Ethiopian law.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="resource-card">
+              <h3>Compliance & Licensing</h3>
+              <p>Guidance on investment licenses, business registration, and regulatory compliance in Ethiopia.</p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog/News -->
+    <section class="blog-section">
+      <div class="container">
+        <h2>Latest in Ethiopian Corporate Law</h2>
+        <div class="blog-post">
+          <h3>Key Updates to the Ethiopian Commercial Code 2021</h3>
+          <p>The Ethiopian Commercial Code was updated in 2021 to modernize business laws. Stay tuned for a detailed breakdown of changes affecting corporate entities.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+        <div class="subscribe-form">
+          <h4>Subscribe for Updates</h4>
+          <form>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div class="chatbot-widget">
+      <h3>Ask Our Corporate Law Bot</h3>
+      <div id="chatbot-container"></div>
+    </div>
+
+    <!-- Contact -->
+    <section class="contact-section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <form id="contact-form">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="3" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div class="contact-info">
+          <p>Email: info@ethiocorporate.com</p>
+          <p>Phone: +251-11-6-672341</p>
+          <p>Address: Addis Ababa, Ethiopia</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
-    <!-- ... (existing footer content) ... -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <p>&copy; 2023 Ethio Corporate. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <ul class="list-inline">
+            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <!-- BotPress Integration -->
   <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
   <script src="https://files.bpcontent.cloud/2025/03/02/17/20250302174517-92A1406M.js"></script>
 
-  <!-- Existing scripts -->
+  <!-- Other Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
   <script>
-    // ... (rest of your existing JavaScript code remains unchanged) ...
-  </script>
-</body>
-</html>
+    // Chatbot Integration
+    const BOTPRESS_URL = "PASTE_BOTPRESS_INSTANCE_URL_HERE";
+    const BOTPRESS_API_KEY = "PASTE_BOTPRESS_API_KEY_HERE";
+
+    // Database Integration (Supabase)
+    const SUPABASE_URL = "https://nejcvvkikjpqrsifgxpg.supabase.co";
+    const SUPABASE_KEY
