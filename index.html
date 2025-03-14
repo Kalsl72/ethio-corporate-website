@@ -1,184 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ethio Corporate</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethio Corporate - Ethiopian Corporate Law Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-blue: #002366;
+            --gold: #C19A6B;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: var(--navy-blue);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+            background: linear-gradient(rgba(0,35,102,0.8), rgba(0,35,102,0.8)),
+                        url('https://source.unsplash.com/random/1920x1080/?addis-ababa') center/cover;
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--navy-blue);
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        /* Main Content Sections */
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            padding: 1.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy-blue);
+            color: var(--white);
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* Chatbot Widget */
+        .chatbot-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">Ethio Corporate</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Resources</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Ethio Corporate</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-  <main>
-    <!-- Homepage -->
-    <section class="hero-section">
-      <div class="container">
-        <h1 class="hero-title">Ethio Corporate - Your Guide to Ethiopian Corporate Law</h1>
-        <p class="hero-subtitle">Ethio Corporate offers comprehensive insights, updates, and resources on Ethiopian corporate law, helping businesses, investors, and legal professionals navigate the legal landscape in Ethiopia.</p>
-        <a href="#" class="btn btn-primary btn-lg">Explore Corporate Law Resources</a>
-        <img src="addis-ababa-skyline.jpg" alt="Addis Ababa Skyline" class="hero-image">
-      </div>
+    <!-- Homepage Hero -->
+    <section class="hero">
+        <h1>Your Guide to Ethiopian Corporate Law</h1>
+        <p>Comprehensive insights and resources for businesses and legal professionals</p>
+        <a href="#services" class="cta-button">Explore Resources</a>
     </section>
 
-    <!-- About Us -->
-    <section class="about-section">
-      <div class="container">
+    <!-- About Section -->
+    <section class="section" id="about">
         <h2>About Ethio Corporate</h2>
-        <p>Ethio Corporate is a trusted resource hub founded to simplify and clarify Ethiopian corporate law for local and international businesses. With expertise in areas like company formation, mergers and acquisitions, corporate governance, and compliance, we aim to empower our users with up-to-date legal knowledge. Our mission is to bridge the gap between complex legal frameworks and practical business needs in Ethiopia.</p>
-      </div>
+        <p>Trusted resource hub for Ethiopian corporate law...</p>
     </section>
 
-    <!-- Services/Resources -->
-    <section class="resources-section">
-      <div class="container">
+    <!-- Services Section -->
+    <section class="section" id="services">
         <h2>Corporate Law Resources</h2>
-        <div class="row">
-          <div class="col-md-6">
-            <div class="resource-card">
-              <h3>Company Formation</h3>
-              <p>Learn about establishing sole proprietorships, partnerships, PLCs, and share companies under the Ethiopian Commercial Code of 2021.</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Company Formation</h3>
+                <p>Learn about establishing businesses under Ethiopian law...</p>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resource-card">
-              <h3>Mergers & Acquisitions</h3>
-              <p>Understand the legal processes for business mergers, acquisitions, and restructuring in Ethiopia.</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resource-card">
-              <h3>Corporate Governance</h3>
-              <p>Explore governance rules, board structures, and shareholder rights as per Ethiopian law.</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="resource-card">
-              <h3>Compliance & Licensing</h3>
-              <p>Guidance on investment licenses, business registration, and regulatory compliance in Ethiopia.</p>
-              <a href="#" class="btn btn-primary">Learn More</a>
-            </div>
-          </div>
+            <!-- Add other service cards -->
         </div>
-      </div>
     </section>
 
-    <!-- Blog/News -->
-    <section class="blog-section">
-      <div class="container">
-        <h2>Latest in Ethiopian Corporate Law</h2>
-        <div class="blog-post">
-          <h3>Key Updates to the Ethiopian Commercial Code 2021</h3>
-          <p>The Ethiopian Commercial Code was updated in 2021 to modernize business laws. Stay tuned for a detailed breakdown of changes affecting corporate entities.</p>
-          <a href="#" class="btn btn-primary">Read More</a>
-        </div>
-        <div class="subscribe-form">
-          <h4>Subscribe for Updates</h4>
-          <form>
-            <div class="mb-3">
-              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+    <!-- Contact Form -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
             </div>
-            <button type="submit" class="btn btn-primary">Subscribe</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!-- Chatbot -->
-    <div class="chatbot-widget">
-      <h3>Ask Our Corporate Law Bot</h3>
-      <div id="chatbot-container"></div>
-    </div>
-
-    <!-- Contact -->
-    <section class="contact-section">
-      <div class="container">
-        <h2>Get in Touch</h2>
-        <form id="contact-form">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="name" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="3" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="cta-button">Send Message</button>
         </form>
-        <div class="contact-info">
-          <p>Email: info@ethiocorporate.com</p>
-          <p>Phone: +251-11-6-672341</p>
-          <p>Address: Addis Ababa, Ethiopia</p>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <p>&copy; 2023 Ethio Corporate. All rights reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <!-- Add footer links and social media -->
         </div>
-        <div class="col-md-6 text-md-end">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-            <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin"></i></a></li>
-          </ul>
-        </div>
-      </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget">
+        <h4>Ask Our Legal Bot</h4>
+        <!-- Botpress Integration -->
+        <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+        <script>
+          window.botpressWebChat.init({
+              "composerPlaceholder": "Ask about Ethiopian corporate law",
+              "botConversationDescription": "Ethio Corporate Legal Assistant",
+              "botId": "YOUR_BOT_ID",
+              "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+              "messagingUrl": "https://messaging.botpress.cloud",
+              "clientId": "YOUR_CLIENT_ID",
+              "stylesheet": "https://webchat-styler-css.botpress.app/prod/code/1c4ad5e0-15ac-4e3e-8e7c-2d811196a0d6/v91903/style.css"
+          });
+        </script>
     </div>
-  </footer>
 
-  <!-- BotPress Integration -->
-  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2025/03/02/17/20250302174517-92A1406M.js"></script>
+    <!-- Supabase Integration -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabase = createClient(
+            'https://nejcvvkikjpqrsifgxpg.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+        )
 
-  <!-- Other Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-  <script>
-    // Chatbot Integration
-    const BOTPRESS_URL = "PASTE_BOTPRESS_INSTANCE_URL_HERE";
-    const BOTPRESS_API_KEY = "PASTE_BOTPRESS_API_KEY_HERE";
+        // Handle form submission
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const { data, error } = await supabase
+                .from('contact_submissions')
+                .insert([
+                    {
+                        name: e.target[0].value,
+                        email: e.target[1].value,
+                        message: e.target[2].value
+                    }
+                ])
 
-    // Database Integration (Supabase)
-    const SUPABASE_URL = "https://nejcvvkikjpqrsifgxpg.supabase.co";
-    const SUPABASE_KEY
+            if (error) console.error(error);
+            else alert('Message sent successfully!');
+        });
+    </script>
+</body>
+</html>
